@@ -6,7 +6,7 @@ class analisis(models.Model):
     analisis_nombre = models.CharField(max_length=50);
     analisis_fregistro = models.DateTimeField(auto_now_add=True);
     analisis_estado = models.BooleanField(default=True);
-
+#crear especialidad
 class especialidad(models.Model):
     especialidad_id = models.AutoField(primary_key=True);
     especialidad_nombre = models.CharField(max_length=50);
@@ -65,7 +65,7 @@ class realizar_examen(models.Model):
     realizar_examen_noindica = models.CharField(max_length=255);
     paciente_id = models.ForeignKey(paciente, on_delete=models.CASCADE);
     usuario_id = models.ForeignKey(usuario, on_delete=models.CASCADE);
-    
+
 class realizar_examen_detalle(models.Model):
     rdetalle_id= models.AutoField(primary_key=True);
     examen_id = models.ForeignKey(examen, on_delete=models.CASCADE);
